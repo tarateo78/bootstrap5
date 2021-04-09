@@ -1,5 +1,5 @@
 $primary:#3422f3;
-$secondary: #b8bbc3;
+$secondary: #999;
 $success: #19713f;
 $info: #6dd2f7;
 $warning: #9d6119;
@@ -7,10 +7,13 @@ $danger: #a81919;
 $light: #343A4b;
 $dark: #293042;
 
-$white: #dedede;
+$heading: #3a445d;
+
+$nearwhite: #ddd;
+$white: #fff;
 
 $body-bg: #202634;
-$body-color: $secondary;
+$body-color: #ccc;
 $body-text-align: null;
 
 $spacer: 0.5rem !default;
@@ -22,27 +25,56 @@ $card-bg: $dark;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 :root {
-	--white: #dedede;
+	--nearwhite: #{$nearwhite};
+	--white: #{$white};
+	--bodycolor: #{$body-color};
+	--heading: #{$heading};
 }
 
+// ---------- TAG -------------
 a {
-	color: rgb(127, 187, 136);
+	color: var(--nearwhite);
 	text-decoration: none;
 }
 
 a:hover {
-	color: rgb(43, 197, 32);
+	color: var(--white);
+	text-decoration: underline;
 }
+
+// ---------- COMPONENT BOOTSTRAP -------------
 
 .card-title {
 	color: var(--white);
 }
 
-// RIghe
+.btn-micro {
+	padding: 0 4px;
+	font-size: 0.8em;
+}
+
+// ---------- COMPONENTI CUSTOM -------------
+.libro-0 {
+	color: lightcoral;
+}
+
+.libro-1 {
+	color: lightblue;
+}
+
+.libro-2 {
+	color: lightgreen;
+}
+
+// ---------- RIGHE -------------
 .intestazione {
-	background-color: #3a445d;
+	background-color: var(--heading);
 	padding: 5px 0;
-	color: #dedede;
+	color: var(--nearwhite);
+}
+
+.riga {
+	padding: 3px 0;
 }
 
 .riga:nth-child(even) {
@@ -50,11 +82,11 @@ a:hover {
 }
 
 .flash:hover {
-	outline: 1px solid #667292;
+	outline: 2px solid #ddd;
+	z-index: 2;
+
 }
 
-// Btn
-.btn-micro {
-	padding: 0 4px;
-	font-size: 0.8em;
+.flash {
+	position: relative;
 }
