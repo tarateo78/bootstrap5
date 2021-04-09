@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="">
+
+
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+		<h5><span class="text-white font-weight-bold pr-xl-3" style="text-shadow: 0 0 8px #000;">
+				Gestionale
+			</span></h5>
+		<span class="text-light ml-md-1" style="font-size:0.8em;">
+			<span class="text-dark" style="text-shadow:1px 1px 1px gray;"><b>USER</b></span>
+		</span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse ml-md-3" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item ">
+					<a class="nav-link" href="/benoeditore/index.php">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link " href="/benoeditore/distributori.php">Distributori</a>
+				</li>
+				<li class="nav-item dropdown ">
+
+				<li class="nav-item dropdown active">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Rivenditori
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item active" href="/benoeditore/elenco-rivenditori.php?key_d=1">Gestiti da
+							me</a>
+						<a class="dropdown-item " href="/benoeditore/elenco-rivenditori.php">Totali</a>
+
+					</div>
+				</li>
+
+				<li class="nav-item dropdown ">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Prodotti
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item " href="/benoeditore/prodotti.php?libro=0">Riviste</a>
+						<a class="dropdown-item " href="/benoeditore/prodotti.php?libro=1">Libri</a>
+						<a class="dropdown-item " href="/benoeditore/prodotti.php?libro=2">Cartine</a>
+						<a class="dropdown-item" href="/benoeditore/prodotti-catalogo.php" target="_blank">Catalogo
+							Prodotti</a>
+					</div>
+				</li>
+
+				<li class="nav-item ">
+					<a class="nav-link" href="/benoeditore/help.php">Help</a>
+				</li>
+
+
+
+				<li class="nav-item">
+					<a class="nav-link btn btn-outline-warning mx-2" href="/benoeditore/admin/index.php"
+						target="_blank">Admin</a>
+				</li>
+
+
+
+			</ul>
+
+			<form class="form-inline my-2 my-lg-0">
+				<small>
+					<span class="text-light">user: Matteo [<a class='text-light' href='?opt=logout'>logout</a>]</span>
+				</small>
+			</form>
+
+
+		</div>
+	</nav>
+
+	<script>
+		$(document).ready(function () {
+			$("a.disabled").click(function () {
+				return false;
+			});
+		});
+	</script>
+	<h1>Rivenditori gestiti da Fabio</h1> <br>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Elenco Rivenditori</h5>
+			<!-- --------------------------- INTESTAZIONE --------------------------- -->
+			<div class="row m-0 intestazione">
+				<div class="col-6 col-sm-2 col-lg-1 text-center"><small>Articoli gest.</small></div>
+				<div class="col-12 col-sm-8 col-lg-3 text-center"><small>Rivenditore</small></div>
+				<div class="col-6 col-sm-2 col-lg-1"><small>Fattura</small></div>
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4"><small>Paese</small></div>
+						<div class="col-5"><small>Indirizzo</small></div>
+						<div class="col-3"><small>Zona</small></div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-2 col-lg-1"><small>Telefono</small></div>
+				<div class="col-6 col-sm-3 col-lg-2"><small>Email</small></div>
+			</div>
+
+			<div class="row m-0 riga flash">
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=87&key_d=4">Anna Market s.a.s. di Atzori Anna Luisa e C.</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Castionetto di Chiuro </div>
+						<div class="col-5 tronca">
+							<small>via Madonnina, 50</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:0342 563017'>0342 563017</a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:fabio.pusterla@gmail.com'>fabio.pusterla@gmail.com</a></small>
+				</div>
+			</div>
+
+
+			<div class="row m-0 riga flash">
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=85&key_d=4">Caffè Lady s.r.l.</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Chiuro </div>
+						<div class="col-5 tronca">
+							<small>via Stelvio 88</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:'></a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:'></a></small>
+				</div>
+			</div>
+
+
+
+			<div class="row m-0 riga bg-danger flash">
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=86&key_d=4">Mio edicola - Merceria Agheli Mioara</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Chiuro </div>
+						<div class="col-5 tronca">
+							<small>Via Visconti, 4</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:0342 483372'>0342 483372</a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:'></a></small>
+				</div>
+			</div>
+
+
+
+
+			<div class="row m-0 riga flash">
+
+
+
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/libro.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+					<img src="immagini/bollino.png" title="L'edicola non ha mai avuto questi libri">
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=88&key_d=4">Dell'Avanzo Lucia Merceria edicola cartoleria</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Ponte in Valtellina </div>
+						<div class="col-5 tronca">
+							<small>via Sen. Enrico Guicciardi, 14</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:0342483332'>0342483332</a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:'></a></small>
+				</div>
+			</div>
+
+
+
+			<div class="row m-0 riga bg-warning flash">
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=91&key_d=4">Alimentari Gandini di Battaglia Paolo</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Teglio </div>
+						<div class="col-5 tronca">
+							<small>via Nazionale 44/A - fraz. Tresenda</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:0342 735463'>0342 735463</a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:'></a></small>
+				</div>
+			</div>
+
+
+
+			<div class="row m-0 riga bg-success flash">
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/cartina.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=89&key_d=4">Edicola di Teglio s.a.s di Simonini Laura & C.</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Teglio </div>
+						<div class="col-5 tronca">
+							<small>Via Roma 3</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:0342 780538'>0342 780538</a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:edicoladiteglio@virgilio.it'>edicoladiteglio@virgilio.it</a></small>
+				</div>
+			</div>
+
+
+			<div class="row m-0 riga bg-warning flash">
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=91&key_d=4">Alimentari Gandini di Battaglia Paolo</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Teglio </div>
+						<div class="col-5 tronca">
+							<small>via Nazionale 44/A - fraz. Tresenda</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:0342 735463'>0342 735463</a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:'></a></small>
+				</div>
+			</div>
+
+
+			<div class="row m-0 riga flash">
+				<!-- ARTICOLI -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3">
+							<img class="miniatura" src="immagini/articoli/rivista.jpg">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+						<div class="col-3">
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- RIVENDITORE -->
+				<div class="col-12 col-sm-8 col-lg-3 tronca">
+					<!-- Spedizione -->
+
+					<!-- Avviso Consegna -->
+
+
+
+					<!-- NOME -->
+					<a href="dettaglio.php?riv=90&key_d=4">Il Ritrovo Bar di Fendoni Vilma</a>
+
+
+
+				</div>
+
+
+				<!-- FATTURE -->
+				<div class="col-6 col-sm-2 col-lg-1">
+					<div class="row m-0">
+						<div class="col-3"> </div>
+
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+						</div>
+						<div class="col-3"></div>
+					</div>
+				</div>
+				<!-- DATI RIVENDITORE -->
+				<div class="col-12 col-sm-7 col-lg-4">
+					<div class="row m-0">
+						<div class="col-4 tronca">
+							Teglio </div>
+						<div class="col-5 tronca">
+							<small>via Castello 4/B - fraz. San Giacomo</small>
+						</div>
+						<div class="col-3 tronca">
+							<small>Media Valtellina</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-sm-2 col-lg-1">
+					<small><a href='tel:'></a></small>
+				</div>
+				<div class="col-6 col-sm-3 col-lg-2 tronca">
+					<small><a href='mailto:'></a></small>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-2">
+			<p class="text-primary">.text-primary</p>
+			<p class="text-secondary">.text-secondary</p>
+			<p class="text-success">.text-success</p>
+			<p class="text-danger">.text-danger</p>
+			<p class="text-warning">.text-warning</p>
+			<p class="text-info">.text-info</p>
+			<p class="text-light">.text-light</p>
+			<p class="text-dark">.text-dark</p>
+			<p class="text-muted">.text-muted</p>
+			<p class="text-white">.text-white</p>
+		</div>
+
+
+		<!-- Test effettivo -->
+		<div class="col-6 p-3">
+
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk
+						of the
+						card's content.</p>
+					<div class="row  bg-light flash">
+						<div class="col-3">Lorem, ipsum.</div>
+						<div class="col-5">Lorem ipsum dolor sit amet.</div>
+						<div class="col-4">
+							<button type="button" class="btn btn-primary btn-sm">Small button</button>
+						</div>
+					</div>
+					<div class="row flash">
+						<div class="col-3">Lorem, ipsum.</div>
+						<div class="col-5">Lorem ipsum dolor sit amet.</div>
+						<div class="col-4">
+							<span class="badge bg-primary">4</span>
+							<span class="badge bg-warning">4</span>
+							<span class="badge bg-secondary">4</span>
+							<span class="badge bg-danger">4</span>
+							<span class="badge bg-info">4</span>
+						</div>
+					</div>
+					<div class="row  bg-light flash">
+						<div class="col-3">Lorem, ipsum.</div>
+						<div class="col-5">Lorem ipsum dolor sit amet.</div>
+						<div class="col-4">
+							<button class="btn btn-primary" type="submit">Button</button>
+						</div>
+					</div>
+					<div class="row  bg-light flash">
+						<div class="col-3">Lorem, ipsum.</div>
+						<div class="col-5">Lorem ipsum dolor sit amet.</div>
+						<div class="col-4">
+							<button class="btn btn-primary btn-micro" type="submit">Button</button>
+							<button class="btn btn-outline-info btn-micro" type="submit">Button</button>
+							<button class="btn btn-outline-primary btn-micro" type="submit">Button</button>
+						</div>
+					</div>
+					<a href="#" class="btn btn-primary mt-5">Go somewhere</a>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+		<div class="col-4">
+
+			<div class="card bg-dark" style="width: 18rem;">
+				<img src="..." class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title text-secondary">Card title</h5>
+					<p class="card-text text-secondary">Some quick example text to build on the card title and
+						make up
+						the bulk of the
+						card's
+						content.</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<span class="badge bg-primary">Primary</span>
+			<span class="badge bg-secondary">Secondary</span>
+			<span class="badge bg-success">Success</span>
+			<span class="badge bg-danger">Danger</span>
+			<span class="badge bg-warning text-dark">Warning</span>
+			<span class="badge bg-info text-dark">Info</span>
+			<span class="badge bg-light text-dark">Light</span>
+			<span class="badge bg-dark">Dark</span>
+			<br>
+			<br>
+			<button type="button" class="btn btn-primary">Primary</button>
+			<button type="button" class="btn btn-secondary">Secondary</button>
+			<button type="button" class="btn btn-success">Success</button>
+			<button type="button" class="btn btn-danger">Danger</button>
+			<button type="button" class="btn btn-warning">Warning</button>
+			<button type="button" class="btn btn-info">Info</button>
+			<button type="button" class="btn btn-light">Light</button>
+			<button type="button" class="btn btn-dark">Dark</button>
+
+			<button type="button" class="btn btn-link">Link</button>
+			<br>
+			<br>
+
+
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10"
+					aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%"
+					aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%"
+					aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%"
+					aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%"
+					aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+		</div>
+</body>
+
+</html>

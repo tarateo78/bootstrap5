@@ -1,0 +1,60 @@
+$primary:#3422f3;
+$secondary: #b8bbc3;
+$success: #19713f;
+$info: #6dd2f7;
+$warning: #9d6119;
+$danger: #a81919;
+$light: #343A4b;
+$dark: #293042;
+
+$white: #dedede;
+
+$body-bg: #202634;
+$body-color: $secondary;
+$body-text-align: null;
+
+$spacer: 0.5rem !default;
+
+// Card
+$card-bg: $dark;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+:root {
+	--white: #dedede;
+}
+
+a {
+	color: rgb(127, 187, 136);
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(43, 197, 32);
+}
+
+.card-title {
+	color: var(--white);
+}
+
+// RIghe
+.intestazione {
+	background-color: #3a445d;
+	padding: 5px 0;
+	color: #dedede;
+}
+
+.riga:nth-child(even) {
+	background: #343A4b;
+}
+
+.flash:hover {
+	outline: 1px solid #667292;
+}
+
+// Btn
+.btn-micro {
+	padding: 0 4px;
+	font-size: 0.8em;
+}
